@@ -1,11 +1,6 @@
-#print the pattern
-#plus pattern
-n = 7  
-for i in range(n):
-    if i == n // 2:          
-        print("* " * n)
-    else:                    
-        print(" " * (n//2*2) + "*")
-
-    #hollow square
-    
+count = 1
+for i in range(1,6):
+    for j in range(1,i+1):
+        print(i,end="")
+        count = count + 1
+    print()
