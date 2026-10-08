@@ -1,3 +1,4 @@
+#
 class Node:
     def __init__(self,val):
         self.data = val
@@ -17,26 +18,11 @@ class LinkedList:
     def print(self):
         temp = self.head
         while temp:
-            print(temp.data)
-            temp = temp.next
-        
-    def delete_node(self,value):
-        temp = self.head
-        #deleting the first node
-        if temp.data== value:
-            self.head=self.head.next
-            return
-        while(temp):
-            if temp.data==value:
-                break
-            else: #traverse
-                prev=temp.next
-        if temp == None:
-            print("value is not there in the list ")
-            return
-        prev.next=temp.next
-        temp=None
-
+            if temp.data>0:
+                sum += temp.data
+                temp = temp.next
+            print(sum)
+            
 list = LinkedList()
 n1 = Node(10)
 n2 = Node(20)

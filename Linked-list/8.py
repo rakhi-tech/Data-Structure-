@@ -1,0 +1,1 @@
+#print the sum of two consecutiven node in singly linked list
