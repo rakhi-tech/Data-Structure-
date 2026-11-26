@@ -47,20 +47,24 @@ def level_order(rt):
 
     arr = []
     cnt = 0
-
+    level=0
     arr.append(rt)
 
     while cnt < len(arr):
-        temp = arr[cnt]
-        cnt += 1
+        node_count=len(arr)-cnt#no of nodes to be visited 
+        print("\n level:",level,end = "")
+        for i in range(node_count):
+         temp = arr[cnt]
+         cnt += 1
 
-        print(temp.data, end=" ")
+         print(temp.data, end="   ")
 
-        if temp.left:
+         if temp.left:
             arr.append(temp.left)
 
-        if temp.right:
+         if temp.right:
             arr.append(temp.right)
+        level+=1
 
 
 # Main Program
