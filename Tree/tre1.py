@@ -31,7 +31,7 @@ class BST:
                     return
                 else:
                     temp = temp.right
-
+   
 
 def inorder(temp):
     if temp is None:
@@ -40,7 +40,21 @@ def inorder(temp):
     inorder(temp.left)
     print(temp.data, end=" ")
     inorder(temp.right)
-
+def level_order(self,rt):
+    if rt is None:
+        print("BST is empty")
+        return
+    arr=[]
+    cnt=0
+    arr.append(rt)
+    while cnt<len(arr):
+        temp=arr[cnt]
+        cnt+=1
+        print(temp.data,end=" ")
+        if temp.left:
+            arr.append(temp.left)
+        if temp.right:
+            arr.append(temp.right)
 
 # Main Program
 t = BST()
@@ -54,3 +68,5 @@ t.insert(Node(76))
 
 print("Inorder Traversal:")
 inorder(t.root)
+print("level order")
+level_order(t.root)

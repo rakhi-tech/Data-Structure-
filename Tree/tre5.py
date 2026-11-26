@@ -42,11 +42,22 @@ class BST:
          rt.data=succ.data
          rt.right=self.del_node(rt.right,succ.data)
         return rt
-    def get_succcessor(self,temp):
-        temp=temp.right
-        while temp.left is not None:
+    
+     def get_succcessor(self,temp):
+         temp=temp.right
+         while temp.left is not None:
             temp=temp.left
-        return temp
+         return temp
+    def search(self,key):
+        temp=self.root
+        while temp:
+            if temp.data == key:
+                return True
+            elif key<=temp.data:
+                temp=temp.left
+            else:
+                temp=temp.right
+        return False
         
     def inorder(self, rt):
         if rt is None:
@@ -96,6 +107,8 @@ b1.preorder(b1.root)
 print("\nPostorder: ")
 b1.postorder(b1.root)
 b1.findminmax()
-b1.del_node(b1.root,2)
+b1.del_node(b1.root,100)
 print("\n After deleting",end=" ")
 b1.inorder(b1.root)
+b1.search(40)
+  
